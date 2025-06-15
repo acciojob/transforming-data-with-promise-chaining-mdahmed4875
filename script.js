@@ -29,8 +29,11 @@ btn.addEventListener('click',()=>{
 			},1000)
 		})
 	}).then((number)=>{
-		setTimeout(()=>{
+		return new Promise((resolve)=>{
+			setTimeout(()=>{
 			output.textContent=`Final Result:${number+10}`;
+				resolve(number+10);
 		},1000)
+		})
 	})
 })
